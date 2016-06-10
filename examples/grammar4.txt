@@ -1,0 +1,10 @@
+F->SN SV
+SV->V SP
+SN->N N
+SP->PP SN
+N->a
+N->maria
+N->muito
+N->cinema
+V->gosta
+PP->de
