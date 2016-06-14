@@ -1,49 +1,49 @@
-**TÕTULO DO PROJECTO: CykParser
+**T√çTULO DO PROJECTO: CykParser
 
 **GRUPO: TURMA 6 - GRUPO 3
 
 
 
-NOME1: Jo„o Manuel Ferreira Trindade, NR1: 201109221, AUTO1: 18, CONTRIBUI«√O: 25%)
+NOME1: Jo√£o Manuel Ferreira Trindade, NR1: 201109221, AUTO1: 18, CONTRIBUI√á√ÉO: 25%)
 
-NOME2: Paulo Bordalo Marcos, NR2: 201100759, AUTO2: 18, CONTRIBUI«√O: 25%)
+NOME2: Paulo Bordalo Marcos, NR2: 201100759, AUTO2: 18, CONTRIBUI√á√ÉO: 25%)
 
-NOME3: Pedro Miguel Sousa Santos, NR3: 201102999, AUTO3: 18, CONTRIBUI«√O: 25%)
+NOME3: Pedro Miguel Sousa Santos, NR3: 201102999, AUTO3: 18, CONTRIBUI√á√ÉO: 25%)
 
-NOME4: Rui Pedro Menezes da Rosa Neves, NR4: 201109350, AUTO4: 18, CONTRIBUI«√O: 25%)
+NOME4: Rui Pedro Menezes da Rosa Neves, NR4: 201109350, AUTO4: 18, CONTRIBUI√á√ÉO: 25%)
 
 
 
-** SUM¡RIO:
+** SUM√ÅRIO:
 
-O nosso projecto È sobre o algoritmo Cyk. O algoritmo Cyk verifica para uma dada gram·tica na forma 
-Chomsky (nesta forma cada produÁ„o apenas pode ser dois sÌmbolos n„o terminais ou um sÌmbolo n„o terminal) 
-se uma dada frase se verifica naquela gram·tica.
+O nosso projecto √© sobre o algoritmo Cyk. O algoritmo Cyk verifica para uma dada gram√°tica na forma 
+Chomsky (nesta forma cada produ√ß√£o apenas pode ser dois s√≠mbolos n√£o terminais ou um s√≠mbolo n√£o terminal) 
+se uma dada frase se verifica naquela gram√°tica.
 Dividimos isto em duas vertentes:
 
-- A primeira È onde o utilizador insere ele prÛprio a gram·tica atravÈs da linha de comandos e fornece a frase para testar.
-- A segunda È onde o utilizador escolhe um ficheiro para carregar a gram·tica e fornece uma frase para testar para a gram·tica carregada.
+- A primeira √© onde o utilizador insere ele pr√≥prio a gram√°tica atrav√©s da linha de comandos e fornece a frase para testar.
+- A segunda √© onde o utilizador escolhe um ficheiro para carregar a gram√°tica e fornece uma frase para testar para a gram√°tica carregada.
 
-**VERIFICA«’ES SINT¡TICAS:
+**VERIFICA√á√ïES SINT√ÅTICAS:
 
-O nosso programa apenas aceita gram·ticas na forma Chomsky, logo tivemos que limitar os inputs para os seguintes formatos:
+O nosso programa apenas aceita gram√°ticas na forma Chomsky, logo tivemos que limitar os inputs para os seguintes formatos:
 VARIAVEL "->" NAO TERMINAL NAO TERMINAL
 VARIAVEL "->" TERMINAL
 TS "->" TERMINAL
 
-em que TS È um terminal (Exemplo: "Det -> a").
+em que TS √© um terminal (Exemplo: "Det -> a").
 
-Logo, se for inserido um NAO TERMINAL a seguir a um TS a excepÁ„o ser· apanhada e ser· dito que a produÁ„o est· incorrecta devolvendo o utilizador ao menu inicial para ele inserir uma nova gram·tica.
-O mesmo acontece com a VARIAVEL e o TS se se inserir mais que duas produÁıes NAO TERMINAIS para o caso da VARIAVEL e duas TERMINAIS para a TS (ultrapassando assim o limite da forma normal de Chomsky).
+Logo, se for inserido um NAO TERMINAL a seguir a um TS a excep√ß√£o ser√° apanhada e ser√° dito que a produ√ß√£o est√° incorrecta devolvendo o utilizador ao menu inicial para ele inserir uma nova gram√°tica.
+O mesmo acontece com a VARIAVEL e o TS se se inserir mais que duas produ√ß√µes NAO TERMINAIS para o caso da VARIAVEL e duas TERMINAIS para a TS (ultrapassando assim o limite da forma normal de Chomsky).
 
-**AN¡LISE SEM¬NTICA:
+**AN√ÅLISE SEM√ÇNTICA:
 
-Para a an·lise sem‚ntica temos a nossa funÁ„o cyk que recebe uma frase para testar se se verifica na gram·tica inserida ou carregada. Uma frase È aceite se na tabela que construimos, o elemento do topo tiver pelo menos uma produÁ„o.
-Por exemplo, para a gram·tica:
+Para a an√°lise sem√¢ntica temos a nossa fun√ß√£o cyk que recebe uma frase para testar se se verifica na gram√°tica inserida ou carregada. Uma frase √© aceite se na tabela que construimos, o elemento do topo tiver pelo menos uma produ√ß√£o.
+Por exemplo, para a gram√°tica:
 S->A B
 A->a
 B->b
-			1™iteraÁ„o
+			1¬™itera√ß√£o
 				 _ _ _ _                       _ _ _ _
 				|       |                     |       |
 				|_ _ _ _|_ _ _ _              |_ _ _ _|_ _ _ _
@@ -51,9 +51,9 @@ B->b
 				|_ _ _ _|_ _ _ _|             |_ _ _ _|_ _ _ _|
 				|   a   |   b   |             |   a   |   b   |
 				
-				o algoritmo ir· verificar se existem regras para os n„o terminais a e b e vai adicionar essas regras ‡ tabela. Neste caso ir· encontrar A->a e B->b adicionando A e B ‡ tabela.
+				o algoritmo ir√° verificar se existem regras para os n√£o terminais a e b e vai adicionar essas regras √† tabela. Neste caso ir√° encontrar A->a e B->b adicionando A e B √† tabela.
 				
-			2™iteraÁ„o
+			2¬™itera√ß√£o
 				 _ _ _ _                       _ _ _ _
 				|       |                     |   S   |
 				|_ _ _ _|_ _ _ _              |_ _ _ _|_ _ _ _
@@ -61,14 +61,14 @@ B->b
 				|_ _ _ _|_ _ _ _|             |_ _ _ _|_ _ _ _|
 				|   a   |   b   |             |   a   |   b   |
 				
-				depois o algoritmo ir· verificar linha a linha, nomeadamente os campos abaixo na sua coluna com os campos na sua diagonal inferior direita. Ou seja, se estiver na linha 2 coluna 1, ir· verificar a linha 1 coluna 1 com
+				depois o algoritmo ir√° verificar linha a linha, nomeadamente os campos abaixo na sua coluna com os campos na sua diagonal inferior direita. Ou seja, se estiver na linha 2 coluna 1, ir√° verificar a linha 1 coluna 1 com
 				a linha 1 coluna 2. Se houvesse uma terceira linha iria verificar a linha 2 coluna 1 (imediatamente abaixo) com a linha 1 coluna 3 (diagonal inferior direita, depois subindo em escada) e de seguida a linha 1 coluna 1 com 
 				a linha 2 coluna 2 fazendo um "X".
 				
 				
-**REPRESENTA«√O INTERM…DIA (IRs):
+**REPRESENTA√á√ÉO INTERM√âDIA (IRs):
 
-Para a representaÁ„o intermÈdia fizemos uma ·rvore abstracta da nossa gram·tica onde apenas temos um nÌvel na ·rvore (ASSIGNMNT) Ela È apresentada no final do algoritmo.
+Para a representa√ß√£o interm√©dia fizemos uma √°rvore abstracta da nossa gram√°tica onde apenas temos um n√≠vel na √°rvore (ASSIGNMNT) Ela √© apresentada no final do algoritmo.
 Exemplo:
 S->A B
 A->a
@@ -91,33 +91,33 @@ B->b
 				|
 				b
 				
-**GERA«√O DE C”DIGO: (Describe how the code generation of your tool works and identify the possible problems your tool has regarding code generation.)
+**GERA√á√ÉO DE C√ìDIGO: (Describe how the code generation of your tool works and identify the possible problems your tool has regarding code generation.)
 
-Para a geraÁ„o de cÛdigo guardamos os nossos sÌmbolos em dois ArrayList, um para os sÌmbolos terminais (terminals) e outro para os sÌmbolos n„o terminais (variables) o que nos foi bastante ˙til para a execuÁ„o do algoritmo.
+Para a gera√ß√£o de c√≥digo guardamos os nossos s√≠mbolos em dois ArrayList, um para os s√≠mbolos terminais (terminals) e outro para os s√≠mbolos n√£o terminais (variables) o que nos foi bastante √∫til para a execu√ß√£o do algoritmo.
 
 **OVERVIEW: (refer the approach used in your tool, the main algorithms, etc.)
 
-Usamos o JJTREE e o JAVACC para fazer o "parse" da gram·tica e anotar a mesma e usamos o CYK Algorithm para verificar se uma dada frase se insere na gram·tica.
+Usamos o JJTREE e o JAVACC para fazer o "parse" da gram√°tica e anotar a mesma e usamos o CYK Algorithm para verificar se uma dada frase se insere na gram√°tica.
 
 **TESTES: 
 
-Temos 5 .txt's com exemplos de gram·ticas com um bom n˙mero de produÁıes em que testamos frases que se verificam nas mesmas. Com os txt's apenas ser· necess·rio inserir a frase que se quer testar, visto que esta poder· ser diferente.
-Existe tambÈm a possibilidade de criarmos nÛs a gram·tica com base no que aprendemos de CFG's ( tendo estas que ser convertidas para CNF (Chomsky Normal Form)).
+Temos 5 .txt's com exemplos de gram√°ticas com um bom n√∫mero de produ√ß√µes em que testamos frases que se verificam nas mesmas. Com os txt's apenas ser√° necess√°rio inserir a frase que se quer testar, visto que esta poder√° ser diferente.
+Existe tamb√©m a possibilidade de criarmos n√≥s a gram√°tica com base no que aprendemos de CFG's ( tendo estas que ser convertidas para CNF (Chomsky Normal Form)).
 
-**DISTRIBUI«√O DE TAREFAS: 
+**DISTRIBUI√á√ÉO DE TAREFAS: 
 
-An·lise Sint·tica e Sem‚ntica trabalhada em conjunto com a percepÁ„o e desenvolvimento / adaptaÁ„o do algoritmo.
-Tratamento de excepÁıes decidido tambÈm em conjunto.
+An√°lise Sint√°tica e Sem√¢ntica trabalhada em conjunto com a percep√ß√£o e desenvolvimento / adapta√ß√£o do algoritmo.
+Tratamento de excep√ß√µes decidido tamb√©m em conjunto.
 
 O trabalho foi efectuado com todos os membros presentes, visto que nos juntavamos na FEUP para o fazer.
 
 
 **PROS: (Identify the most positive aspects of your tool)
-- Algoritmo r·pido e funcional
-- Boa apresentaÁ„o da AST
+- Algoritmo r√°pido e funcional
+- Boa apresenta√ß√£o da AST
 - Boa ajuda ao utilizador (tratamento de erros)
 - Dois modos de teste
-- ContinuaÁ„o do programa em caso de erros
+- Continua√ß√£o do programa em caso de erros
 
 **CONS: (Identify the most negative aspects of your tool)
-- N„o tem interface gr·fica
+- N√£o tem interface gr√°fica  
